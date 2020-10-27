@@ -5,21 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-    tools:context=".SubActivity">
+    tools:context=".MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextField2"
+        android:id="@+id/outlinedTextField1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="315dp"
         android:layout_height="57dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="50dp"
         android:hint="@string/label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputField2"
+            android:id="@+id/inputField1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
@@ -27,27 +27,28 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextField2" />
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextField1" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="217dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/buttonText2"
+        android:id="@+id/button1"
+        android:layout_width="340dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/buttonText1"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView1"
         app:strokeColor="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
