@@ -2,4 +2,5 @@
     <string name="app_name">Activity</string>
     <string name="label">Enter a sample text</string>
     <string name="buttonText1">Click to see next activity</string>
+    <string name="buttonText2">Click to see previous activity</string>
 </resources>
