@@ -1,11 +1,11 @@
 package com.example.activity
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -18,15 +18,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Getting text from input field.
-        val textId = findViewById<EditText>(R.id.inputField1)
-        var inputText = textId.text.toString()
-        Log.i("MainActivity", inputText)
+        // Accessing textview and assign value from MainActivity to textview
+        val message = intent.getStringExtra("input")
+        val text1 = findViewById<TextView>(R.id.textView1)
+        text1.text = message
 
         // Getting button by id and move to next activity on button click
         val buttonid = findViewById<Button>(R.id.button1)
         buttonid.setOnClickListener {
-            val intent = Intent(this@MainActivity, SubActivity::class.java)
+
+            // Getting text from input field.
+            val textId = findViewById<EditText>(R.id.inputField1)
+            val inputText = textId.text.toString()
+
+            // Passing input text value and starting new activity
+            val intent = Intent(applicationContext, SubActivity::class.java)
             intent.putExtra("input", inputText)
             startActivity(intent)
 

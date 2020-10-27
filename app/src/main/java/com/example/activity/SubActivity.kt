@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -15,17 +16,23 @@ class SubActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sub)
 
-        // Accesing textview and assig value from MainActivity to textview
-        val message = intent.getStringExtra("input").toString()
-        Log.i("SubActivity",message)
+        // Accessing textview and assign value from MainActivity to textview
+        val message = intent.getStringExtra("input")
         val text1 = findViewById<TextView>(R.id.textView2)
-        text1.setText(message)
+        text1.text = message
 
         // Getting button by id and move to previous activity on button click
         val buttonid = findViewById<Button>(R.id.button2)
         buttonid.setOnClickListener {
-            val previous = Intent(this@SubActivity,MainActivity::class.java)
-            startActivity(previous)
+
+            // Getting text from input field.
+            val textId = findViewById<EditText>(R.id.inputField2)
+            val inputText = textId.text.toString()
+
+            // Passing input text value and starting previous activity again
+            val intent = Intent(this@SubActivity,MainActivity::class.java)
+            intent.putExtra("input",inputText)
+            startActivity(intent)
         }
     }
 
