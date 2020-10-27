@@ -1,7 +1,10 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -15,6 +18,9 @@ class SubActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sub)
+
+        // Change the font color of action bar
+        supportActionBar?.setTitle(Html.fromHtml("<font color=\"#4e342e\">" + getString(R.string.app_name) + "</font>"))
 
         // Accessing textview and assign value from MainActivity to textview
         val message = intent.getStringExtra("input")
