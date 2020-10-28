@@ -5,7 +5,5 @@
     <color name="text_color">#4e342e</color>
     <color name="secondary_color">#FFC046</color>
     <color name="secondary_variant">#FF8F00</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
     <color name="ic_launcher_background">#FFDB72</color>
 </resources>
