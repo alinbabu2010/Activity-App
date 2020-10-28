@@ -1,7 +1,6 @@
-@file:Suppress("DEPRECATION")
-
 package com.example.activity
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.Html
@@ -10,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import org.jetbrains.anko.startActivityForResult
 
 /**
  * This is the second activity to be used in the app.
@@ -18,9 +18,6 @@ class SubActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sub)
-
-        // Change the font color of action bar
-        supportActionBar?.setTitle(Html.fromHtml("<font color=\"#4e342e\">" + getString(R.string.app_name) + "</font>"))
 
         // Accessing textview and assign value from MainActivity to textview
         val message = intent.getStringExtra("input")
@@ -36,9 +33,11 @@ class SubActivity : AppCompatActivity() {
             val inputText = textId.text.toString()
 
             // Passing input text value and starting previous activity again
-            val intent = Intent(this@SubActivity,MainActivity::class.java)
-            intent.putExtra("input",inputText)
-            startActivity(intent)
+            val intent = Intent(this,MainActivity::class.java)
+            intent.putExtra("data",inputText)
+            setResult(Activity.RESULT_OK,intent)
+            finish()
+
         }
     }
 
